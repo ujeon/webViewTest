@@ -18,8 +18,8 @@
         //     window.ReactNativeWebView.postMessage("Page is focused");
         // }
 
-        if (window.webkit && window.webkit.messageHandlers) {
-            window.webkit.messageHandlers.nativeHandler.postMessage("Hello from JavaScript");    
+        if (window.webkit && window.webkit.ReactNativeWebView) {
+            window.webkit.ReactNativeWebView.postMessage("Hello from JavaScript");    
         }
     });
 </script>
