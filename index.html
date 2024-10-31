@@ -11,5 +11,13 @@
     <a href="https://www.naver.com" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Naver</a>
     <a href="googlegmail://co" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Gmail</a>
     <p>Note: This link only works if Gmail is installed on your device.</p>
+
+   <script>
+    window.addEventListener("focus", () => {
+        if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+            window.ReactNativeWebView.postMessage("Page is focused");
+        }
+    });
+</script>
 </body>
 </html>
