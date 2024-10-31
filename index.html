@@ -7,21 +7,17 @@
 </head>
 <body>
     <h1>Open Gmail App</h1>
-    <p>version: 4</p>
+    <p>version: 5</p>
     <a href="https://www.naver.com" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Naver</a>
     <a href="googlegmail://co" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Gmail</a>
     <p>Note: This link only works if Gmail is installed on your device.</p>
 
    <script>
-    window.addEventListener("focus", () => {
-        // if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-        //     window.ReactNativeWebView.postMessage("Page is focused");
-        // }
-
-    
-        window.webkit.messageHandlers.ReactNativeHistoryShim.postMessage("Hello from JavaScript");    
-        
-    });
-</script>
+        window.addEventListener("focus", () => {
+            if (window.navigator.userAgent.match(/classting_iphone/i)) {
+                window.webkit?.messageHandlers?.ReactNativeHistoryShim?.postMessage("Hello from JavaScript");    
+            }
+        });
+    </script>
 </body>
 </html>
