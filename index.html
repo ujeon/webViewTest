@@ -18,8 +18,8 @@
         //     window.ReactNativeWebView.postMessage("Page is focused");
         // }
 
-        if (window.webkit && window.webkit.ReactNativeWebView) {
-            window.webkit.ReactNativeWebView.postMessage("Hello from JavaScript");    
+        if (window.ReactNativeHistoryShim && window.ReactNativeHistoryShim) {
+            window.ReactNativeHistoryShim.postMessage("Hello from JavaScript");    
         }
     });
 </script>
