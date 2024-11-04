@@ -7,18 +7,30 @@
 </head>
 <body>
     <h1>Open Gmail App</h1>
-    <p>version: 6</p>
+    <p>version: 7</p>
     <a href="https://www.naver.com" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Naver</a>
     <a href="googlegmail://co" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Gmail(iOS)</a>
     <a href="mailto:" style="padding: 10px 20px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 5px;">Open Gmail(Android)</a>
     <p>Note: This link only works if Gmail is installed on your device.</p>
 
    <script>
-        window.addEventListener("focus", function() {
-            if (window.navigator.userAgent.match(/classting_iphone/i)) {
+       document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === "visible") {
+                console.log("앱이 포어그라운드로 돌아왔습니다.");
+                // 앱이 다시 활성화되었을 때 실행할 코드 작성
+                if (window.navigator.userAgent.match(/classting_iphone/i)) {
                 window.webkit?.messageHandlers?.ReactNativeHistoryShim?.postMessage("Hello from JavaScript");    
+                }
+            } else {
+                console.log("앱이 백그라운드로 전환되었습니다.");
+                // 앱이 백그라운드로 전환되었을 때 실행할 코드 작성
             }
         });
+        // window.addEventListener("focus", function() {
+        //     if (window.navigator.userAgent.match(/classting_iphone/i)) {
+        //         window.webkit?.messageHandlers?.ReactNativeHistoryShim?.postMessage("Hello from JavaScript");    
+        //     }
+        // });
     </script>
 </body>
 </html>
